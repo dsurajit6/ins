@@ -1,6 +1,7 @@
 # iNeuron Course Details Scrapper
 1. AWS Link : http://ineuronscrapper-env.eba-vfwdphhi.ap-south-1.elasticbeanstalk.com/
-    <img align="left" src="ins/1.PNG" width="800">![Home Page on AWS](/ins/1.PNG)
+    <img align="left" src="ins/1.PNG" width="800"> ![Home Page on AWS](/ins/1.PNG)
+    <img src="./ins/1.PNG" width=800 /> ![Home Page on AWS](/ins/1.PNG)
     - Refresh Button is to perfom the (re)scrapping operation. Previosly scrapped data is loaded.
         - Scrap the course details
         - Cretate PDF and store it to S3
