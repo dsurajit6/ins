@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iNeuronScrapper</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    </head>
+    <body>
+        <section id="container" class="bg-dark text-light">
+            <div class="container py-5">
+                <div>
+                    <h1>{{course_details['title']}}</h1>
+                    <p class="lead">{{course_details['description']}}</p>
+                    <a href="{{course_details['url']}}" class="btn btn-warning" target="_blank">Enroll @ iNeuron</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 my-2">
+                        <div class="card bg-light text-dark">
+                            <div class="card-body">
+                                <h3 class="text-center">Features</h3>
+                                <ul>
+                                    {% for f in course_details['features'] %}
+                                        <li>{{f}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 my-2">
+                        <div class="card bg-light text-dark">
+                            <div class="card-body">
+                                <h3 class="text-center">Requirements</h3>
+                                <ul>
+                                    {% for req in course_details['requirements'] %}
+                                        <li>{{req}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-2">
+                        <div class="card bg-light text-dark">
+                            <div class="card-body">
+                                <h3 class="text-center">Course Info</h3>
+                                <ul>
+                                    {% if course_details['duration'] %}
+                                        <li>Course Duration : {{course_details['duration']}}</li>
+                                    {% endif %}
+                                    {% if course_details['language'] %}
+                                        <li>Language : {{course_details['language']}}</li>
+                                    {% endif %}
+                                    {% if course_details['price'] %}
+                                        <li>Price : Rs {{course_details['price']}}</li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col">
+                        <div class="card bg-light text-dark">
+                            <div class="card-body">
+                                <h3>What You Will Learn?</h3>
+                                <ul>
+                                    {% for l in course_details['learn'] %}
+                                        <li>{{l}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col">
+                        <div class="card bg-light text-dark">
+                            <div class="card-body">
+                                <h3>Course Curriculum</h3>
+                                {% if course_details['curriculum'] %}
+                                {% for t, sts in course_details['curriculum'].items() %}
+                                    <ul class="list-unstyled">
+                                        <li><h5>{{t}}</h5>
+                                            <ul>
+                                                {% for st in sts %}
+                                                    <li>{{st}}</li>
+                                                {% endfor %}    
+                                            </ul>
+                                        <li>
+                                    </ul>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>

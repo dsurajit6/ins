@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iNeuronScrapper</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    </head>
+    <body class="bg-dark">
+        <section id="container" class="bg-dark ">
+            <div class="text-center">
+                <h1 class="fs-2 text-light">iNeuron Course List</h1>
+                <a href="/refresh" class="btn btn-warning">Refresh</a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col mx-auto my-3">
+                        <table class="table table-striped bg-light text-dark">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Duration</th>
+                                    <th>Language</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for d in data %}
+                                    <tr>
+                                        <td>{{d['title']}}</td>
+                                        <td>{{d['duration']}}</td>
+                                        <td>{{d['language']}}</td>
+                                        <td>{{d['price']}}</td>
+                                        <td>
+                                            <!-- <a href="/download/{{d['file']}}" class="btn btn-sm btn-warning">Catalog</a> -->
+                                            <a href="https://ineuron-course-bucket.s3.ap-south-1.amazonaws.com/{{d['file']}}" class="btn btn-sm btn-warning">Catalog</a>
+                                            <a href="/details/{{d['_id']}}" class="btn btn-sm btn-info">Details</a>
+                                        <td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+        </section>
+        <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>

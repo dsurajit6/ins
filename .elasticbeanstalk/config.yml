@@ -1,0 +1,17 @@
+branch-defaults:
+  main:
+    environment: null
+global:
+  application_name: ineuronscrapper
+  branch: main
+  default_ec2_keyname: null
+  default_platform: Python 3.7
+  default_region: ap-south-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: origin
+  sc: git
+  workspace_type: Application
