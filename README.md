@@ -1,5 +1,5 @@
 # iNeuron Course Details Scrapper
-1. AWS Link : http://ineuronscrapper-env.eba-vfwdphhi.ap-south-1.elasticbeanstalk.com/
+1. AWS screenshot
     ![Home Page on AWS](./ins/1.PNG)
     - Refresh Button is to perfom the (re)scrapping operation. Previosly scrapped data is loaded.
         - Scrap the course details
@@ -7,7 +7,7 @@
         - Save Details to MongoDB
     - Catalog is to download the PDF from S3
     - Details is to view the couse Details
-2. Azure link : https://inscrap.azurewebsites.net/
+2. Azure screenshot
     ![Home Page on Azure](./ins/8.PNG)
 3. PDF Preview After download 
     ![PDF Preview After download](./ins/2.PNG)
